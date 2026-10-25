@@ -6,12 +6,19 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Test Route', home: MyHome());
+    return MaterialApp(
+      title: 'Test Route',
+      //atribut home dihapus!
+      routes: {
+        '/': (context) => const MyHome(),
+        '/layar2': (context) => const LayarKeduaPisah(
+          pesan: "haloo ini pesan dari screen 1",
+        ),
+      },
+    );
   }
 }
 
@@ -42,16 +49,8 @@ class MyHomeState extends State<MyHome> {
           children: [
             ElevatedButton(
               child: const Text('Ke screen Kedua'),
-              onPressed: () async {
-                hasil = await Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const LayarKedua(
-                        pesan: "haloo ini pesan dari screen 1",
-                      );
-                    },
-                  ),
-                );
+              onPressed: () {
+                Navigator.of(context).pushNamed("/layar2");
               },
             ),
             Text(" Hasil: $_hasil"),
