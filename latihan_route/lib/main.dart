@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_route/layarkedua.dart';
+import 'package:latihan_route/layarkeduapisah.dart';
 
 void main() {
   runApp(const MyApp());
