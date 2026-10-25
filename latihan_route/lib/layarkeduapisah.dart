@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LayarKeduaPisah extends StatelessWidget {
-  const LayarKeduaPisah({Key? key, required this.pesan});
+class LayarKedua extends StatelessWidget {
+  const LayarKedua({Key? key, required this.pesan});
   final String pesan;
 
   @override

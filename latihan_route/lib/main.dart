@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       // home: MyHome()
       routes: {
         '/': (context) => const MyHome(),
-        '/layar2': (context) => const LayarKeduaPisah(pesan: ""),
+        '/layar2': (context) => const LayarKedua(pesan: ""),
       },
     );
   }
@@ -37,7 +37,7 @@ class MyHome extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const LayarKeduaPisah(pesan: "");
+                      return const LayarKedua(pesan: "");
                     },
                   ),
                 );
@@ -49,7 +49,7 @@ class MyHome extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return LayarKeduaPisah(
+                      return LayarKedua(
                         pesan: "halloo ini pesan dari screen 1",
                       );
                     },
