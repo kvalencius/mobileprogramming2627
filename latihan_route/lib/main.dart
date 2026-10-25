@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_route/layarkeduapisah.dart';
+import 'layarkeduapisah.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,33 +11,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Test Route',
-      //atribut home dihapus!
+      // home: MyHome()
       routes: {
         '/': (context) => const MyHome(),
-        '/layar2': (context) => const LayarKeduaPisah(
-          pesan: "haloo ini pesan dari screen 1",
-        ),
+        '/layar2': (context) => const LayarKeduaPisah(pesan: ""),
       },
     );
   }
 }
 
-class MyHome extends StatefulWidget {
+class MyHome extends StatelessWidget {
   const MyHome({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    return MyHomeState();
-  }
-}
-
-class MyHomeState extends State<MyHome> {
-  String _hasil = "";
-
-  set hasil(String hasil) {
-    _hasil = hasil;
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +34,29 @@ class MyHomeState extends State<MyHome> {
             ElevatedButton(
               child: const Text('Ke screen Kedua'),
               onPressed: () {
-                Navigator.of(context).pushNamed("/layar2");
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const LayarKeduaPisah(pesan: "");
+                    },
+                  ),
+                );
               },
             ),
-            Text(" Hasil: $_hasil"),
+            ElevatedButton(
+              child: const Text('Ke Screen Kedua Pisah'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LayarKeduaPisah(
+                        pesan: "halloo ini pesan dari screen 1",
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
