@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LayarKedua extends StatelessWidget {
-  const LayarKedua({Key? key, required this.pesan});
+class LayarKeduaPisah extends StatelessWidget {
+  const LayarKeduaPisah({Key? key, required this.pesan});
   final String pesan;
 
   @override
@@ -10,11 +10,7 @@ class LayarKedua extends StatelessWidget {
       appBar: AppBar(title: const Text('Ini Screen 2')),
       body: Center(
         child: ElevatedButton(
-          child: Text(
-            pesan.isEmpty
-                ? "screen kedua, tap icon back di app bar"
-                : "Ini screen kedua pisah,ada Pesan : $pesan",
-          ),
+          child: Text("Ini screen kedua pisah,ada Pesan : $pesan"),
           onPressed: () {
             Navigator.of(context).pop();
           },

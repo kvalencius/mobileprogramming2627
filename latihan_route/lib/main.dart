@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'layarkeduapisah.dart';
+import 'layarkedua.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       // home: MyHome()
       routes: {
         '/': (context) => const MyHome(),
-        '/layar2': (context) => const LayarKedua(pesan: ""),
+        '/layar2': (context) => const LayarKedua(),
       },
     );
   }
@@ -37,7 +38,7 @@ class MyHome extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const LayarKedua(pesan: "");
+                      return const LayarKedua();
                     },
                   ),
                 );
@@ -49,7 +50,7 @@ class MyHome extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return LayarKedua(
+                      return LayarKeduaPisah(
                         pesan: "halloo ini pesan dari screen 1",
                       );
                     },
